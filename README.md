@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# 4장 이벤트 핸들링
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 웹 브라우저에서 DOM 요소들과 상호 작용하는 것을 <이벤트>라고 한다.
 
-## Available Scripts
+## 💻이 프로젝트의 이벤트 핸들링 순서
 
-In the project directory, you can run:
+1. 컴포넌트 생성 및 불러오기
+2. onChange 이벤트 핸들링하기
+3. 임의 메서드 만들기
+4. input 여러 개 만들기
+5. onKeyPress 이벤트 핸들링하기
 
-### `npm start`
+#### 이벤트 핸들링의 예제
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 마우스 커서를 올렸을 때는 onmouseover 이벤트 실행
+- 클릭 했을 때는 onclick
+- Form 요소는 값이 바뀔 때 onchange
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 이벤트 사용시 주의 사항
 
-### `npm test`
+1. 이벤트 이름은 카멜 표기법으로 사용합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+EX) onClick / onKeyUp 이런 식으로 사용한다.
 
-### `npm run build`
+2. 이벤트에 실행 할 자바스크립트 코드를 전달하는 것이 아니라 함수 형태의 값을 전달합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. DOM 요소에만 이벤트를 설정할 수 있습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+EX) div, button, input, form, span 등 같은 DOM 요소에만 가능하다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+<div onClick = {this.props.onClick}>
+  <!-- { (...) } -->
+</div>
+```
 
-### `npm run eject`
+### 이벤트 종류
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clipboard
+2. Composition
+3. Keyboard
+4. Focus
+5. Form
+6. Mouse
+7. Selection
+8. Touch
+9. UI
+10. Wheel
+11. Media
+12. Image
+13. Animation
+14. Transition
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+나머지 이벤트는 리액트 메뉴얼인
+(https://facebook.github.io/react/docs/evets.html) 참고
